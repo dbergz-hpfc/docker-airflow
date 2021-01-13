@@ -4,7 +4,7 @@
 # BUILD: docker build --rm -t puckel/docker-airflow .
 # SOURCE: https://github.com/puckel/docker-airflow
 
-FROM python:3.9-slim-buster
+FROM python:3.9
 #Original author is puckel
 LABEL maintainer="dbergz" 
 ##updated from puckel_
