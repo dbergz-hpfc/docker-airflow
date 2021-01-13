@@ -67,7 +67,7 @@ RUN set -ex \
     && pip install 'redis==3.2' \
     && pip install SQLAlchemy==1.3.15 \
     ## added SQLAlchemy 1/13/2021
-    ## && pip install pandas \
+    && pip install pandas \
     && pip install pyspark \
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
     && apt-get purge --auto-remove -yqq $buildDeps \
