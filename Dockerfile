@@ -57,6 +57,7 @@ RUN set -ex \
     && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
     && useradd -ms /bin/bash -d ${AIRFLOW_USER_HOME} airflow \
     && pip install -U pip setuptools wheel \
+    && pip install Cython \
     && pip install pytz \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
@@ -65,7 +66,6 @@ RUN set -ex \
     && pip install 'redis==3.2' \
     && pip install SQLAlchemy==1.3.15 \
     ## added SQLAlchemy 1/13/2021
-    && pip install cython \
     && pip install pandas \
     && pip install pyspark \
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
