@@ -58,16 +58,16 @@ RUN set -ex \
     && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
     && useradd -ms /bin/bash -d ${AIRFLOW_USER_HOME} airflow \
     && pip install -U pip setuptools wheel \
-    && pip install pytz==2020.5 \
-    && pip install pyOpenSSL==20.0.1 \
-    && pip install ndg-httpsclient==0.5.1 \
+    && pip install pytz \
+    && pip install pyOpenSSL \
+    && pip install ndg-httpsclient \
     && pip install pyasn1 \
     && pip install apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
     && pip install 'redis==3.2' \
     && pip install SQLAlchemy==1.3.15 \
     ## added SQLAlchemy 1/13/2021
-    && pip install pandas==1.2 \
-    && pip install pyspark==3.0.1 \
+    && pip install pandas \
+    && pip install pyspark \
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
     && apt-get purge --auto-remove -yqq $buildDeps \
     && apt-get autoremove -yqq --purge \
