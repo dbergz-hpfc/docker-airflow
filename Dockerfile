@@ -6,14 +6,16 @@
 
 FROM python:3.9-slim-buster
 #Original author is puckel
-LABEL maintainer="dbergz" --updated from puckel_
+LABEL maintainer="dbergz" 
+##updated from puckel_
 
 # Never prompt the user for choices on installation/configuration of packages
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM linux
 
 # Airflow
-ARG AIRFLOW_VERSION=1.10.14 --updated from 1.10.9
+ARG AIRFLOW_VERSION=1.10.14 
+##updated from 1.10.9
 ARG AIRFLOW_USER_HOME=/usr/local/airflow
 ARG AIRFLOW_DEPS=""
 ARG PYTHON_DEPS=""
@@ -62,7 +64,8 @@ RUN set -ex \
     && pip install pyasn1==1.6.1 \
     && pip install apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
     && pip install 'redis==3.2' \
-    && pip install SQLAlchemy==1.3.15 \ -- added 1/13/2021
+    && pip install SQLAlchemy==1.3.15 \
+    ## added SQLAlchemy 1/13/2021
     && pip install pandas==1.2 \
     && pip install pyspark==3.0.1 \
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
