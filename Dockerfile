@@ -4,7 +4,7 @@
 # BUILD: docker build --rm -t puckel/docker-airflow .
 # SOURCE: https://github.com/puckel/docker-airflow
 
-FROM python:3.9
+FROM python:3.7
 #Original author is puckel
 LABEL maintainer="dbergz" 
 ##updated from puckel_
