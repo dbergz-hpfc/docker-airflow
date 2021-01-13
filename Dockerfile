@@ -61,7 +61,7 @@ RUN set -ex \
     && pip install pytz==2020.5 \
     && pip install pyOpenSSL==20.0.1 \
     && pip install ndg-httpsclient==0.5.1 \
-    && pip install pyasn1==0.4.8 \
+    && pip install pyasn1 \
     && pip install apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
     && pip install 'redis==3.2' \
     && pip install SQLAlchemy==1.3.15 \
